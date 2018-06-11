@@ -1,20 +1,20 @@
 # car
 
-> car project
+> 一个车保险项目
 
 ## Build Setup
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 运行
 npm run dev
 
-# build for production with minification
+# 打包
 npm run build
 
-# build for production and view the bundle analyzer report
+# 打包和和查看捆绑分析报告
 npm run build --report
 ```
 
