@@ -1,6 +1,6 @@
 # car
 
-> 一个车保险项目
+> 一个车保险项目,运用vue-cli搭建
 
 ## Build Setup
 
@@ -9,12 +9,12 @@
 npm install
 
 # 运行
-npm run dev
+npm run dev => `http://localhost:8080`
 
 # 打包
 npm run build
 
-# 打包和和查看捆绑分析报告
+# 打包和查看捆绑分析报告
 npm run build --report
 ```
 
