@@ -1,12 +1,15 @@
 # car
 
-> 一个车保险项目,运用vue-cli搭建
+> 一个车保险项目,运用vue-cli搭建、UI：[@ydui](http://vue.ydui.org)
 
 ## Build Setup
 
 ``` bash
-# git clone
+# 拉代码
 git clone https://github.com/evinLiang/car.git
+
+# 进入项目文件夹
+cd car
 
 # 安装依赖
 npm install

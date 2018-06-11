@@ -1,14 +1,21 @@
 <template>
-	<div>purse</div>
+	<div>
+	 	<v-header :headerName="headerName" :tabbar="tabbar"></v-header>
+	</div>
 </template>
 
 <script>
+import header from '@/components/header/header';	
 export default {
 	data() {
 		return {
-
+			headerName:'钱包',  //header头部信息名
+			tabbar:true	//判断是否为tabbar的页面，如果是back按钮去掉
 		};
-	}
+	},
+	components: {
+      'v-header': header
+    }
 }
 </script>
 

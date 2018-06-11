@@ -57,9 +57,10 @@ export default {
   font-size: 12px;
 }
 .tab-item a { 
-  padding-top: 0.6rem;
+  padding-top: 0.5rem;
   display: inline-block;
   width: 100%; 
+  color: #bcbcbc;
 }
 .tab-item a .homeIcon { background: url(./assets/home_normal.png);}
 .tab-item .active .homeIcon {background: url(./assets/home_click.png);}
