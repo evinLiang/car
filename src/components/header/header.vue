@@ -2,7 +2,6 @@
 	<div v-show="!Weixin">
 		<div class="header"><a v-show="!tabbar" class="back" href="javascript:;" onclick="window.history.go(-1)"></a> {{headerName}}</div>
 		<div class="headPlaceholder"></div>
-		{{aaa}}
 	</div>
 </template>
 
@@ -15,9 +14,10 @@ export default {
 		};
 	},
 	created() {
-		if(this.isWeiXin()){
-			this.Weixin=true //如果是微信，关闭导航条
-		}
+		//如果是微信，关闭导航条
+		// if(this.isWeiXin()){
+		// 	this.Weixin=true 
+		// }
 	},
 	methods: {
 		//判断是否微信
@@ -38,6 +38,8 @@ export default {
 	.header { 
 		display:fixed; 
 		z-index: 101;
+		top: 0px;
+		left: 0px;
 		width: 100%;
 		height: 4.5rem;
 		line-height: 4.5rem;

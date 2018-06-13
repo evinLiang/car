@@ -1,7 +1,10 @@
 <template>
 	<div>
+		<tabbar></tabbar>
 		<slider></slider>
-		<div class="dayPrize res-img"><img src="./dayPrize.png" alt=""></div>
+		<div class="dayPrize res-img">
+			<router-link to="/daysProze"><img src="./dayPrize.png" alt=""></router-link>
+		</div>
 		<div class="server-list">
 			<yd-grids-group :rows="3">
 		        <yd-grids-item>
@@ -41,13 +44,14 @@
 		            </div>  
 		        </yd-grids-item>
 		    </yd-grids-group>			
-		</div>
-		<div class="footPlaceholder"></div>	
+		</div>	
+		<div class="footPlaceholder"></div>
 	</div>
 </template>
 
 <script>
 import slider from '@/components/slider/slider';
+import tabbar from '@/components/tabbar/tabbar';
 export default {
 	data() {
 		return {
@@ -55,7 +59,8 @@ export default {
 		};
 	},
 	components: {
-      'slider': slider
+      'slider': slider,
+      'tabbar':tabbar
     }
 }
 </script>
@@ -78,5 +83,5 @@ export default {
 	font-size:1.3rem;
 	margin-top: 1.5rem;
 	color: #999;
-}
+}   
 </style>

@@ -4,10 +4,12 @@ import home from '@/components/home/home'
 import purse from '@/components/purse/purse'
 import me from '@/components/me/me'
 import recommend from '@/components/recommend/recommend'
+import daysProze from '@/components/daysProze/daysProze'
 
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
@@ -28,7 +30,11 @@ export default new Router({
     {
       path: '/recommend',
       component: recommend
-    }       
+    },
+    {
+      path: '/daysProze',
+      component: daysProze
+    }           
   ],
   linkActiveClass: 'active'
 })

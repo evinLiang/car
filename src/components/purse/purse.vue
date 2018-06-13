@@ -1,11 +1,13 @@
 <template>
 	<div>
+		<tabbar></tabbar>
 	 	<v-header :headerName="headerName" :tabbar="tabbar"></v-header>
 	</div>
 </template>
 
 <script>
-import header from '@/components/header/header';	
+import header from '@/components/header/header';
+import tabbar from '@/components/tabbar/tabbar';	
 export default {
 	data() {
 		return {
@@ -14,7 +16,8 @@ export default {
 		};
 	},
 	components: {
-      'v-header': header
+      'v-header': header,
+      'tabbar':tabbar
     }
 }
 </script>
