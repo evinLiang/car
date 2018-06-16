@@ -2,6 +2,9 @@
 	<div>
 		<tabbar></tabbar>
 	 	<v-header :headerName="headerName" :tabbar="tabbar"></v-header>
+	 	<div class="recommend">
+	 		
+	 	</div>
 	</div>
 </template>
 
@@ -23,5 +26,11 @@ export default {
 </script>
 
 <style>
-
+	.recommend {
+		position: absolute;
+		z-index: 99;
+		width: 100%;
+		height: 100%;
+		background: red;
+	}
 </style>

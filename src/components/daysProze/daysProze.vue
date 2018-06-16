@@ -36,7 +36,7 @@ export default {
 		background: #f5f5f5;
 		box-shadow:-2px 0px 2px rgba(51,51,51,0.3);
 	}    
-    .style-enter-active,.style-leave-active{
+/*    .style-enter-active,.style-leave-active{
         transition: all 0.4s;
         transform: translateX(0%);
         
@@ -44,5 +44,5 @@ export default {
     .style-enter,.style-leave-to{
     	transition: all 0.4s;
         transform: translateX(100%);
-    }
+    }*/
 </style>

@@ -36,7 +36,7 @@ export default {
 
 <style scoped>
 	.header { 
-		display:fixed; 
+		position: fixed; 
 		z-index: 101;
 		top: 0px;
 		left: 0px;
