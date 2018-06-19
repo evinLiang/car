@@ -5,6 +5,8 @@ import purse from '@/components/purse/purse'
 import me from '@/components/me/me'
 import recommend from '@/components/recommend/recommend'
 import daysProze from '@/components/daysProze/daysProze'
+import feedback from '@/components/feedback/feedback'
+import trafficRegulationst from '@/components/trafficRegulationst/trafficRegulationst'
 
 Vue.use(Router)
 
@@ -34,6 +36,14 @@ export default new Router({
     {
       path: '/daysProze',
       component: daysProze
+      //redirect: '/daysProze/trafficRegulationst',
+      // children:[
+      //     { path: '/daysProze/trafficRegulationst', component: trafficRegulationst}
+      // ]
+    },
+    {
+      path: '/feedback',
+      component: feedback
     }           
   ],
   linkActiveClass: 'active'

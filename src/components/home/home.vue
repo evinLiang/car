@@ -7,40 +7,10 @@
 		</div>
 		<div class="server-list">
 			<yd-grids-group :rows="3">
-		        <yd-grids-item>
+		        <yd-grids-item v-for="item in serverList" :key="item.id">
 		        	<div slot="else" style="text-align: center;">
-		                <img src="./icon_1.png" style="height: 4rem;">
-		                <p class="text">违章查询</p>
-		            </div>  
-		        </yd-grids-item>
-		        <yd-grids-item>
-		        	<div slot="else" style="text-align: center;">
-		                <img src="./icon_2.png" style="height: 4rem;">
-		                <p class="text">道路救援</p>
-		            </div>  
-		        </yd-grids-item>
-		        <yd-grids-item>
-		        	<div slot="else" style="text-align: center;">
-		                <img src="./icon_3.png" style="height: 4rem;">
-		                <p class="text">一键车险</p>
-		            </div>  
-		        </yd-grids-item>
-		        <yd-grids-item>
-		        	<div slot="else" style="text-align: center;">
-		                <img src="./icon_4.png" style="height: 4rem;">
-		                <p class="text">汽车美容</p>
-		            </div>  
-		        </yd-grids-item>
-		        <yd-grids-item>
-		        	<div slot="else" style="text-align: center;">
-		                <img src="./icon_5.png" style="height: 4rem;">
-		                <p class="text">安全出行</p>
-		            </div>  
-		        </yd-grids-item>
-		        <yd-grids-item>
-		        	<div slot="else" style="text-align: center;">
-		                <img src="./icon_6.png" style="height: 4rem;">
-		                <p class="text">车主之家</p>
+		                <img :src="item.iconSrc" style="height: 4rem;">
+		                <p class="text">{{item.name}}</p>
 		            </div>  
 		        </yd-grids-item>
 		    </yd-grids-group>			
@@ -55,7 +25,14 @@ import tabbar from '@/components/tabbar/tabbar';
 export default {
 	data() {
 		return {
-
+			serverList:[
+				{name:'违章查询',iconSrc:require('./icon_1.png')},
+				{name:'道路救援',iconSrc:require('./icon_2.png')},
+				{name:'一键车险',iconSrc:require('./icon_3.png')},
+				{name:'汽车美容',iconSrc:require('./icon_4.png')},
+				{name:'安全出行',iconSrc:require('./icon_5.png')},
+				{name:'车主之家',iconSrc:require('./icon_6.png')}
+			]
 		};
 	},
 	components: {

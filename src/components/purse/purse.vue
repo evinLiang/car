@@ -4,20 +4,40 @@
 	 	<v-header :headerName="headerName" :tabbar="tabbar"></v-header>
 	 	<div class="purseInfo">
 	 		<div class="tripIncome">
-	 			<h3>998</h3>
+	 			<h3>
+	 				<yd-countup
+				            endnum="998"
+				            duration="3"
+				    ></yd-countup>
+				</h3>
 	 			<p class="incomeName">安全出行收益(元)</p>
 	 		</div>
 	 		<div class="incomeDetail">
 	 			<div class="item">
-	 				<h4>998</h4>
+	 				<h4>
+	 					<yd-countup
+				            endnum="998"
+				            duration="3"
+				    	></yd-countup>
+	 				</h4>
 	 				<p class="incomeName">账户余额(元)</p>
 	 			</div>
 	 			<div class="item">
-	 				<h4>568</h4>
+	 				<h4>
+	 					<yd-countup
+				            endnum="568"
+				            duration="3"
+				    	></yd-countup>
+	 				</h4>
 	 				<p class="incomeName">昨日收益(元)</p>
 	 			</div>
 	 			<div class="item">
-	 				<h4>998</h4>
+	 				<h4>
+	 					<yd-countup
+				            endnum="998"
+				            duration="3"
+				    	></yd-countup>
+	 				</h4>
 	 				<p class="incomeName">累计收益(元)</p>
 	 			</div>
 	 		</div>	
@@ -56,7 +76,7 @@ export default {
 	data() {
 		return {
 			headerName:'钱包',  //header头部信息名
-			tabbar:true	//判断是否为tabbar的页面，如果是back按钮去掉
+			tabbar:true		   //判断是否为tabbar的页面，如果是back按钮去掉
 		};
 	},
 	components: {
