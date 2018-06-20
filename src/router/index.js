@@ -7,6 +7,7 @@ import recommend from '@/components/recommend/recommend'
 import daysProze from '@/components/daysProze/daysProze'
 import feedback from '@/components/feedback/feedback'
 import trafficRegulationst from '@/components/trafficRegulationst/trafficRegulationst'
+import detail from '@/components/detail/detail'
 
 Vue.use(Router)
 
@@ -19,32 +20,37 @@ export default new Router({
     },
     {
       path: '/home',
-      component: home
+      component: home,
     },
     {
       path: '/purse',
-      component: purse
+      component: purse,
+      //name:'purse'
     },    
     {
       path: '/me',
-      component: me
+      component: me,
+      //name:'me'
     },
     {
       path: '/recommend',
-      component: recommend
+      component: recommend,
+      //name:'recommend'
     },
     {
       path: '/daysProze',
       component: daysProze
-      //redirect: '/daysProze/trafficRegulationst',
-      // children:[
-      //     { path: '/daysProze/trafficRegulationst', component: trafficRegulationst}
-      // ]
     },
     {
       path: '/feedback',
-      component: feedback
-    }           
+      component: feedback,
+      name:'feedback'
+    },
+    {
+      path: '/detail/:id',
+      name: 'detail',
+      component: detail
+    }            
   ],
   linkActiveClass: 'active'
 })

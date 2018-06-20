@@ -1,6 +1,5 @@
 <template>
-	<div class="bg-fff">
-		<tabbar></tabbar>
+	<div class="bg-fff component">
 	 	<v-header :headerName="headerName" :tabbar="tabbar"></v-header>
 	 	<div class="userInfo">
 	 		<div v-show="login">
@@ -39,7 +38,6 @@
 
 <script>
 import header from '@/components/header/header';
-import tabbar from '@/components/tabbar/tabbar';
 export default {
 	data() {
 		return {
@@ -59,8 +57,7 @@ export default {
 		};
 	},
 	components: {
-      'v-header': header,
-      'tabbar':tabbar
+      'v-header': header
     },
     methods:{
     	getLogin(){
@@ -110,6 +107,7 @@ export default {
 	border-radius: 0.5rem;
 	font-size: 15px;
 	margin: 0rem 3rem;
+	color: #fff;
 }
 .loginSign {
 	position: absolute;

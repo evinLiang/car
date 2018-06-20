@@ -1,6 +1,5 @@
 <template>
-	<div>
-		<tabbar></tabbar>
+	<div class="component">
 	 	<v-header :headerName="headerName" :tabbar="tabbar"></v-header>
 	 	<div class="purseInfo">
 	 		<div class="tripIncome">
@@ -71,7 +70,6 @@
 
 <script>
 import header from '@/components/header/header';
-import tabbar from '@/components/tabbar/tabbar';	
 export default {
 	data() {
 		return {
@@ -80,8 +78,7 @@ export default {
 		};
 	},
 	components: {
-      'v-header': header,
-      'tabbar':tabbar
+      'v-header': header
     }
 }
 </script>

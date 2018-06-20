@@ -1,6 +1,5 @@
 <template>
-	<div>
-		<tabbar></tabbar>
+	<div class="component">
 	 	<v-header :headerName="headerName" :tabbar="tabbar"></v-header>
 	 	<div class="recommend" :class="recommend_weixin_height"></div>
 	 	<div class="recommend-share" v-show="shareShow" @click="shareHide()">
@@ -21,8 +20,7 @@
 </template>
 
 <script>
-import header from '@/components/header/header';
-import tabbar from '@/components/tabbar/tabbar';	
+import header from '@/components/header/header';	
 import weixin from '../../modules/weixin.js';
 export default {
 	data() {
@@ -35,8 +33,7 @@ export default {
 		};
 	},
 	components: {
-      'v-header': header,
-      'tabbar':tabbar
+      'v-header': header
     },
     created() {
 

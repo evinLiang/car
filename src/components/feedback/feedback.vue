@@ -1,6 +1,5 @@
 <template>
-	<transition name="style" mode="out-in">
-	<div class="page">		
+	<div class="component">		
 	 	<v-header :headerName="headerName" :tabbar="tabbar"></v-header>
 	 	<div class="feedbackText">
 		 	<yd-cell-group>
@@ -14,7 +13,6 @@
 	    	<p>车小安感谢您的宝贵意见！</p>
 	    </div>
 	</div>
-	</transition>
 </template>
 
 <script>
@@ -52,17 +50,7 @@ export default {
 }
 </script>
 
-<style>
-	.page {
-		position: fixed;
-		left: 0px;
-		top: 0px;
-		z-index: 101;
-		width: 100%;
-		min-height: 100%;
-		background: #f5f5f5;
-		box-shadow:-2px 0px 2px rgba(51,51,51,0.3);
-	}   
+<style>  
 	.feedbackText {
 		margin-top: 1rem;
 	}
