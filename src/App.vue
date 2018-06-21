@@ -27,9 +27,9 @@
       </div>      
     </div>
     <transition :name="transitionName">
-      <!-- <keep-alive> -->
+      <keep-alive>
         <router-view></router-view>
-      <!-- </keep-alive>   --> 
+      </keep-alive>   
     </transition>  
   </div>
 </template>

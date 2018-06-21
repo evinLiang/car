@@ -12,12 +12,13 @@
 
 <script>
 export default {
+	props: {
+      newsList: {
+        type: Array
+      }
+    },
 	data() {
 		return {
-			newsList:[
-				{title:'安全出行常识详解一',description:'道路交通信息：指挥灯信号、车道灯信号、人行横道灯信号、交通指挥棒信号、手势信号......',id:1},
-				{title:'安全出行常识详解二',description:'道路交通信息：指挥灯信号、车道灯信号、人行横道灯信号、交通指挥棒信号、手势信号......',id:2}
-			]
 		};
 	},
 	methods:{

@@ -1,21 +1,23 @@
 <template>
     <yd-slider autoplay="5000" speed="1000">
-        <yd-slider-item>
-            <a href="javascript:;">
-                <img src="./banner.png">
-            </a>
-        </yd-slider-item>
-        <yd-slider-item>
-            <a href="javascript:;">
-                <img src="./banner.png">
-            </a>
+        <yd-slider-item v-for="item in slides" :key="item.id">
+            <template v-if="item.href">
+                <a :href="item.href"><img :src="item.imgUrl"></a>
+            </template>
+            <template v-else>
+                <img :src="item.imgUrl">
+            </template>
         </yd-slider-item>
     </yd-slider>
 </template>
 
-<script type="text/babel">
+<script>
     export default {
-        
+        props: {
+          slides: {
+            type: Array
+          }
+        }
     }
 </script>
 

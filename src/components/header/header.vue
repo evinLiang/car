@@ -17,7 +17,7 @@ export default {
 	created() {
 		//如果是微信，关闭导航条
 		if(weixin.isWeiXin()){
-			//this.Weixin=true 
+			this.Weixin=true 
 		}		
 	},
 	methods: {

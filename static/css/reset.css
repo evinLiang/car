@@ -135,3 +135,12 @@ img {vertical-align: middle;}
     top: 0;
     min-height: 100%;   
 }
+
+.float-l { float: left; }
+.float-r { float: right; }
+.text-a-l { text-align: left; }
+.text-a-r { text-align: right; }
+
+.clear { clear:both; visibility:hidden; display:block; font-size:0; line-height:0; }
+.clearfix:after { visibility:hidden; display:block; font-size:0;content:" "; clear:both; height:0; }
+.clearfix { *zoom:1; } 

@@ -8,6 +8,7 @@ import daysProze from '@/components/daysProze/daysProze'
 import feedback from '@/components/feedback/feedback'
 import trafficRegulationst from '@/components/trafficRegulationst/trafficRegulationst'
 import detail from '@/components/detail/detail'
+import storeDetail from '@/components/storeDetail/storeDetail'
 
 Vue.use(Router)
 
@@ -15,41 +16,57 @@ export default new Router({
   mode:'history',
   routes: [
     {
+      //默认第一个是active
       path: '/',
-      redirect: '/home'	//默认第一个是active
+      redirect: '/home'
     },
     {
-      path: '/home',
+      //首页
+      path: '/home',  
       component: home,
+      name:'home'
     },
     {
-      path: '/purse',
+      //钱包
+      path: '/purse',  
       component: purse,
-      //name:'purse'
+      name:'purse'
     },    
     {
-      path: '/me',
+      //个人中心
+      path: '/me',  
       component: me,
-      //name:'me'
+      name:'me'
     },
     {
-      path: '/recommend',
+      //分享
+      path: '/recommend',   
       component: recommend,
-      //name:'recommend'
+      name:'recommend'
     },
     {
-      path: '/daysProze',
-      component: daysProze
+      //天天奖
+      path: '/daysProze',  
+      component: daysProze,
+      name:'daysProze'
     },
     {
-      path: '/feedback',
+      //反馈意见
+      path: '/feedback',     
       component: feedback,
       name:'feedback'
     },
     {
-      path: '/detail/:id',
-      name: 'detail',
-      component: detail
+      //文章详情页
+      path: '/detail/:id',  
+      component: detail,
+      name: 'detail'
+    },
+    {
+      //门店详情页
+      path: '/storeDetail/:id',  
+      component: storeDetail,
+      name: 'storeDetail'
     }            
   ],
   linkActiveClass: 'active'

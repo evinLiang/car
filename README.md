@@ -1,11 +1,11 @@
 # car
 
-> 一个车保险项目,运用vue-cli搭建、UI：[@ydui](http://vue.ydui.org)
+> 一个`车保险`项目,框架：[vue-cli](https://cn.vuejs.org/)、UI：[ydui](http://vue.ydui.org)
 
 ## Build Setup
 
 ``` bash
-# 拉代码
+# 拉取代码
 git clone https://github.com/evinLiang/car.git
 
 # 进入项目文件夹

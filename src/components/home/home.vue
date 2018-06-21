@@ -1,12 +1,12 @@
 <template>
 	<div class="component">
-		<slider></slider>
+		<slider :slides="slides"></slider>
 		<div class="dayPrize res-img">
 			<router-link to="/daysProze"><img src="./dayPrize.png" alt=""></router-link>
 		</div>
 		<div class="server-list">
 			<yd-grids-group :rows="3">
-		        <yd-grids-item v-for="item in serverList" :key="item.id">
+		        <yd-grids-item v-for="item in serverList" :key="item.id" type="link" :link="item.href">
 		        	<div slot="else" style="text-align: center;">
 		                <img :src="item.iconSrc" style="height: 4rem;">
 		                <p class="text">{{item.name}}</p>
@@ -24,12 +24,16 @@ export default {
 	data() {
 		return {
 			serverList:[
-				{name:'违章查询',iconSrc:require('./icon_1.png')},
-				{name:'道路救援',iconSrc:require('./icon_2.png')},
-				{name:'一键车险',iconSrc:require('./icon_3.png')},
-				{name:'汽车美容',iconSrc:require('./icon_4.png')},
-				{name:'安全出行',iconSrc:require('./icon_5.png')},
-				{name:'车主之家',iconSrc:require('./icon_6.png')}
+				{name:'违章查询',iconSrc:require('./icon_1.png'),href:""},
+				{name:'道路救援',iconSrc:require('./icon_2.png'),href:""},
+				{name:'一键车险',iconSrc:require('./icon_3.png'),href:""},
+				{name:'汽车美容',iconSrc:require('./icon_4.png'),href:"/storeDetail/:id"},
+				{name:'安全出行',iconSrc:require('./icon_5.png'),href:""},
+				{name:'车主之家',iconSrc:require('./icon_6.png'),href:""}
+			],
+			slides:[
+				{imgUrl:require('./banner.png')},
+				{imgUrl:require('./banner.png')}
 			]
 		};
 	},
