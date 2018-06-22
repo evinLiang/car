@@ -19,41 +19,33 @@
 			<div class="panelTitle clearfix">
 				<h3 class="float-l">服务类别</h3>
 			</div>
-			<yd-cell-group>
-		        <yd-cell-item type="checkbox">
-		            <span slot="left">标准洗车-五座轿车</span>
-		            <span slot="right" class="margin-r-10">99元</span>
-		            <input slot="right" type="checkbox" value="1" v-model="checkedNames"/>
-		        </yd-cell-item>
-		        <yd-cell-item type="checkbox">
-		            <span slot="left">全车打蜡-五座轿车</span>
-		            <span slot="right" class="margin-r-10">99元</span>
-		            <input slot="right" type="checkbox" value="2" v-model="checkedNames"/>
-		        </yd-cell-item>
-		        <yd-cell-item type="checkbox">
-		            <span slot="left">内饰清洗-五座轿车</span>
-		            <span slot="right" class="margin-r-10">99元</span>
-		            <input slot="right" type="checkbox" value="3" v-model="checkedNames"/>
-		        </yd-cell-item>
-		    </yd-cell-group>
+			<div class="panelMain">
+				<serverType @showMondy="getMoneySum" :serverTypes="serverTypes"></serverType>
+		    </div>
 		</div>
 		<div class="infoPanel">
 			<div class="panelTitle clearfix">
 				<h3 class="float-l">评论(1800)</h3>
 				<a href="javascript:;" class="float-r">查看更多</a>
 			</div>
+			<div class="panelMain">
+				<comment :comments="comments"></comment>
+			</div>
 		</div>
-		<div class="footPlaceholder bg-fff"></div>
-		<div class="goPay">
-			<div class="payText">￥ {{mokey}}</div>
+	    <div class="goPay" v-show="showMokey!=0">
+			<div class="payText">￥ {{showMokey}}</div>
 			<div class="payBtn" type="warning" @click="goPay()">去支付</div>
 		</div>
+		<div class="footPlaceholder bg-fff"></div>
+		
 	</div>
 </template>
 
 <script>
 import slider from '@/components/slider/slider';
-import header from '@/components/header/header';	
+import header from '@/components/header/header';
+import comment from '@/components/comment/comment';	
+import serverType from '@/components/serverType/serverType';	
 export default {
 	data() {
 		return {
@@ -61,48 +53,60 @@ export default {
 			tabbar:false,	//判断是否为tabbar的页面，如果是back按钮去掉
 			listId: this.$route.params.id,
 			rate:4,
-			checkedNames:['1'],
 			mokey:99,
+			showMokey:0,
 			slides:[
 				{imgUrl:require('./storeBanner.jpg')},
 				{imgUrl:require('./storeBanner.jpg')}
+			],
+			serverTypes:[
+				{name:'标准洗车-五座轿车',money:99,value:'1'},
+				{name:'全车打蜡-五座轿车',money:99,value:'2'},
+				{name:'内饰清洗-五座轿车',money:99,value:'3'}
+			],
+			comments:[
+				{
+					userName:'昵称是什么',
+					rate:5,
+					time:'2018-6-20',
+					userAvatar:require('./avatar.png'),
+					userText:'不错，很实惠，商家的汽车美容服务very good！',
+					userPic:[require('./userPic.jpg'),require('./userPic.jpg')],
+					business:{
+						time:'2018-6-21',
+						text:'你好，感谢你对我们店的支持与喜爱，很高兴能带给你愉快的体验，我们将更加用心服务好每一位客人，期待你的下次光临。',
+						tag:['标准洗车','全车打蜡']
+					}
+				},
+				{
+					userName:'2昵称是什么',
+					rate:4,
+					time:'2018-6-19',
+					userAvatar:require('./avatar.png'),
+					userText:'不错，很实惠，商家的汽车美容服务very good！',
+					userPic:[require('./userPic.jpg')]
+				}
 			]
 		};
 	},
 	components: {
       'v-header': header,
-      'slider':slider
+      'slider':slider,
+      'comment':comment,
+      'serverType':serverType
     },
     methods:{
+    	getMoneySum(value){
+    		this.showMokey = value;
+    	},
     	goPay(){
-    		if(this.mokey == 0){
+    		if(this.showMokey == 0){
     			this.$dialog.alert({mes: '请选择服务类别'});
+    		}else {
+    			this.$dialog.alert({mes: '支付'+this.showMokey+'元'});
     		}
     	}
-    },
-    watch:{
-		checkedNames:{
-			handler(newValue,oldValue){
-				var num = newValue.length;
-				switch(num){
-				    case 0:
-				        this.mokey=0
-				        break;
-				    case 1:
-				        this.mokey=99
-				        break;
-				    case 2:
-				        this.mokey=198
-				        break;
-				    case 3:
-				        this.mokey=297
-				        break;        
-				    default:
-				        this.mokey=99
-				} 
-			}
-		}
-	}
+    }
 }
 </script>
 
@@ -112,7 +116,6 @@ export default {
 	padding: 1.6rem 2rem;
 	border-bottom: 1px solid #e5e5e5;
 }
-.margin-r-10 { margin-right: 10px; }
 .storeInfo .storeName {
 	font-weight: bold;
 	color: #404040;
@@ -129,11 +132,9 @@ export default {
 .infoPanel .panelTitle { padding: 1.5rem 2rem; border-bottom: 1px solid #e5e5e5; }
 .infoPanel .panelTitle h3 { color: #404040; font-size: 14px; }
 .infoPanel .panelTitle a { color: #a0a0a0; font-size: 12px; }
-.yd-cell-right input[type=checkbox]:not(.yd-switch):checked+.yd-cell-checkbox-icon:after, .yd-cell-right input[type=radio]:checked+.yd-cell-checkbox-icon:after {
-	color: #ffa938;
-}
 .infoPanel .yd-cell-box { margin-bottom: 0rem; }
 .infoPanel .yd-cell::after { border:none; }
+
 .goPay {
 	position: fixed;
 	z-index: 115;
@@ -142,11 +143,9 @@ export default {
 	width: 100%;
 	height: 5rem;
 	line-height: 5rem;
-	background: #f4f4f4;
-	border-top: 1px solid #dedede;
 	display: flex;
 	font-size: 15px;
 }
 .goPay .payBtn { width: 13rem; color: #fff; background: #ff8133; text-align: center; }
-.goPay .payText { flex: 1; padding-left: 2.5rem; }
+.goPay .payText { flex: 1; padding-left: 2.5rem; background: #f4f4f4; }
 </style>
