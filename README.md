@@ -1,6 +1,6 @@
 # car
 
-> 一个`车保险`项目,框架：[vue-cli](https://cn.vuejs.org/)、UI：[ydui](http://vue.ydui.org)
+> 一个`车保险`项目,框架：[vue-cli](https://cn.vuejs.org/)、UI：[ydui](http://vue.ydui.org)、后端：后端云[Bmob](http://www.bmob.cn)
 
 ## Build Setup
 
