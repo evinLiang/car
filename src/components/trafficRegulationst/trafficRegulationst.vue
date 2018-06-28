@@ -1,10 +1,10 @@
 <template>
 	<div class="newsList">
 		<div class="new-item" v-for="item in newsList" :key="item.id" @click="goDetail(item.id)">
-			<div class="new-pic res-img"></div>
+			<div class="new-pic res-img"><img :src="item.imgUrl" alt=""></div>
 			<div class="new-main">
 				<h4>{{item.title}}</h4>
-				<p>{{item.description}}</p>
+				<p>{{item.description}}...</p>
 			</div>
 		</div>
 	</div>
@@ -46,11 +46,16 @@ export default {
 	height: 9.2rem;
 	border-radius: 0.5rem;
 	overflow: hidden;
-	background: #ff8942;
+/*	background: #ff8942;*/
 	margin-right: 1rem;
 }
+.new-pic img {
+	width: 100%;
+    height: 100%;
+    object-fit:cover;
+}	
 .new-main { flex: 1; }
-.new-main h4 { font-size: 15px; color: #404040; margin: 0.5rem 0rem; }
+.new-main h4 { font-size: 15px; color: #404040; margin: 0.5rem 0rem 0rem; line-height: 20px; }
 .new-main p { font-size: 11px; color:#888888; line-height: 1.5rem; }
 @media screen and (max-width: 320px) {
 	.new-pic {

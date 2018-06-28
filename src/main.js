@@ -6,8 +6,11 @@ import router from './router'
 import YDUI from 'vue-ydui'
 import 'vue-ydui/dist/ydui.px.css';
 import '../static/css/reset.css';
-import axios from 'axios'
-Vue.prototype.$http = axios
+import axios from 'axios';
+// import '@/assets/bmobmin';
+Vue.prototype.$http = axios;
+
+Bmob.initialize("f481cd497551bfc7cbac5ba810965f82", "f3f0114e0877c7cae8d7e1fa9c11d6f1");
 
 Vue.use(YDUI);
 Vue.config.productionTip = false

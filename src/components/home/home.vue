@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import slider from '@/components/slider/slider';
+import slider from '@/components/slider/slider';	//引入轮播组件
+import bmobUse from '@/modules/bmobUse';			//引入bmob的方法模块
 export default {
 	data() {
 		return {
@@ -31,14 +32,29 @@ export default {
 				{name:'安全出行',iconSrc:require('./icon_5.png'),href:""},
 				{name:'车主之家',iconSrc:require('./icon_6.png'),href:""}
 			],
-			slides:[
-				{imgUrl:require('./banner.png')},
-				{imgUrl:require('./banner.png')}
-			]
+			slides:[]
 		};
 	},
 	components: {
       'slider': slider
+    },
+    created(){
+    	var _this = this;
+    	
+    	//获取轮播图数据
+		bmobUse.getAllData("homeSlider",function(res){
+
+			//循环拿到的数据，push到this.slides
+			for(var i in res){
+				_this.slides.push({
+					imgUrl:res[i].attributes.imgUrl
+				})
+			}
+		},function(res){
+
+			//数据获取失败回调
+			console.log(res);
+		}) 	  	
     }
 }
 </script>

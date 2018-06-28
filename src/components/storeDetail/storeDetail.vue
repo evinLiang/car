@@ -103,6 +103,8 @@ export default {
     		if(this.showMokey == 0){
     			this.$dialog.alert({mes: '请选择服务类别'});
     		}else {
+
+    			
     			this.$dialog.alert({mes: '支付'+this.showMokey+'元'});
     		}
     	}
